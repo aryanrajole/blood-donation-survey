@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff5f5;
+      color: #333;
+    }
+
+    header {
+      background: #c62828;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: #b71c1c;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .form-section {
+      max-width: 700px;
+      margin: 30px auto;
+      background: #ffe5e5;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .form-section h2 {
+      color: #c62828;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      width: 100%;
+    }
+
+    button {
+      padding: 15px;
+      background: #d32f2f;
+      color: white;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #b71c1c;
+    }
+
+    .survey {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background: #d32f2f;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      transition: 0.3s ease;
+    }
+
+    a.button:hover {
+      background: #b71c1c;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background: #c62828;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Blood Donation Survey
+  </header>
+
+  <section class="intro">
+    <h2>Be a Hero – Donate Blood</h2>
+    <p>
+      A few minutes of your time can save lives.  
+      Please provide your basic information below so we can connect you with nearby donation centers.  
+    </p>
+  </section>
+
+  <!-- Basic Info Form -->
+  <section class="form-section">
+    <h2>Your Basic Information</h2>
+    <form id="basicInfoForm">
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+      <div>
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="Enter your age" required>
+      </div>
+      <div>
+        <label for="blood">Blood Group</label>
+        <select id="blood" required>
+          <option value="">-- Select Blood Group --</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+      </div>
+      <button type="submit">Submit Information</button>
+    </form>
+  </section>
+
+  <!-- Survey Section -->
+  <section class="survey">
+    <h2>Continue to Full Survey</h2>
+    <p>
+      After sharing your basic details, you can fill out our detailed survey.  
+    </p>
+    <a class="button" href="https://forms.gle/5vvxxVbWd4VtpdoP9" target="_blank">
+      Fill the Full Survey
+    </a>
+  </section>
+
+  <footer>
+    © 2025 Blood Donation Awareness | Together, we save lives.
+  </footer>
+
+  <script>
+    // Simple JavaScript to handle the form
+    document.getElementById("basicInfoForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      let age = document.getElementById("age").value;
+      let blood = document.getElementById("blood").value;
+
+      if(name && age && blood) {
+        alert("Thank you, " + name + "! Your details have been recorded.");
+        document.getElementById("basicInfoForm").reset();
+      } else {
+        alert("Please fill out all fields.");
+      }
+    });
+  </script>
+
+</body>
+</html>
